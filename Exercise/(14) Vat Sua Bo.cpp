@@ -29,17 +29,16 @@ Sample Output 0
 
 using namespace std;
 
-
-
 //==================================
 int main (){
     FAST_IO;
-    int n, re = 0, i= 0;
+    int n, i= 0;
+    long long re = 0;
     cin >> n;
     int a[n];
     for (auto &x:a) cin >> x;
     sort(a, a+n, greater<int>());
-    while (a[i] - i > 0){
+    while (a[i] - i > 0 && i < n){
         re += a[i]-i;
         ++i;
     }
