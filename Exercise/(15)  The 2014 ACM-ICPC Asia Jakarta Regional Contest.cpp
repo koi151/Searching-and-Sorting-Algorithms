@@ -43,10 +43,11 @@ int main ()
     int n,k, cnt = 1;
     cin >> n >> k;
     int a[n];
-    for (auto x:a) cin >> x;
-    for (int i = 1; i < n; i++){
-        if (a[i] - a[i-1] > k)
-            cnt ++;
+    for (auto &x:a) cin >> x;
+    sort(a,a+n);
+    for (int i = 0; i < n-1; i++){
+        if (a[i+1] - a[i] > k)
+            ++cnt;
     }
     cout << cnt;
     return 0;
